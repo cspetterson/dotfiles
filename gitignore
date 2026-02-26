@@ -11,3 +11,6 @@
 /tmp
 
 db/*.sqlite3
+
+.claude/
+.github/copilot-instructions.md
