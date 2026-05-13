@@ -4,7 +4,7 @@ desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README.md LICENSE id_dsa.pub].include? file
+    next if %w[Rakefile README.md LICENSE id_dsa.pub nvim].include? file
 
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
@@ -32,6 +32,11 @@ task :install do
   puts "Linking public ssh key"
   system %Q{rm "$HOME/.ssh/id_dsa.pub"}
   system %Q{ln -s "$PWD/id_dsa.pub" "$HOME/.ssh/id_dsa.pub"}
+
+  # Link Neovim config
+  puts "Linking Neovim config"
+  system %Q{rm -rf "$HOME/.config/nvim"}
+  system %Q{ln -s "$PWD/nvim" "$HOME/.config/nvim"}
 
   # Need to do this to make vim use RVM's ruby version
   # puts "Moving zshenv to zshrc"
