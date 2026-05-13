@@ -14,3 +14,5 @@ db/*.sqlite3
 
 .claude/
 .github/copilot-instructions.md
+CLAUDE.md
+.tool-versions
