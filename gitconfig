@@ -2,10 +2,11 @@
 [user]
   email = cspetterson@hey.com
   name = Craig Petterson
+  signingkey = 04048171DF4B8F0A
 [github]
   user = JalisoCSP
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore
 [push]
   autoSetupRemote = true
